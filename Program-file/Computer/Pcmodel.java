@@ -1,8 +1,4 @@
-
-
-
-public class Pc {
-
+public class Pcmodel {
     
 
     // Attributes 
@@ -19,7 +15,7 @@ public class Pc {
 
     
         // Default contructor 
-        public Pc(){
+        public Pcmodel(){
             //Each type is reciving a void parameter (without declaring it).
             this.model = ""; 
             this.brand = "";
@@ -33,7 +29,7 @@ public class Pc {
         }
 
     
-            public Pc(String model, String brand, String cpu, String gpu, int rammemory, String typememory, int storage, String psu){
+            public Pcmodel(String model, String brand, String cpu, String gpu, int rammemory, String typememory, int storage, String psu){
                 
                 // recive the parameters and atriubuate value to them
                 this.model = model;
@@ -68,7 +64,7 @@ public class Pc {
             public void setstorage(int storage) {this.storage = storage;}
 
             public String getpsu(){return psu;}
-            public void setspsu(String psu) {this.psu = psu;}
+            public void setpsu(String psu) {this.psu = psu;}
 
                 public void print1(){
                     System.out.println("Pc specifications!");
@@ -83,3 +79,5 @@ public class Pc {
 
                 }
 }
+
+
