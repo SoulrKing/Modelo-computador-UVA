@@ -177,11 +177,13 @@ public class PcAPP {
                 int rammemory4 = 0;
                 while(true){if (sc.hasNextInt()){
                     sc.nextInt();
+                    sc.nextLine();
                     break;
                 }else{
                     System.out.println("Invalid Number! Please enter an number for the Ram memory");
                     sc.nextLine();
-                    rammemory4 = 0;
+                        System.out.print("Ram Memory: ");
+                    
                 }}
                     
                 
@@ -192,12 +194,12 @@ public class PcAPP {
                 int storage4 = 0;
                 while(true){
                     if(sc.hasNextInt()){
-                        sc.nextLine();
+                        sc.nextInt();
                         break;
                     }else{
                         System.out.println("Invalid Number! Please enter an number for the storege");
                         sc.nextLine();
-                        storage4 = 0;
+                        System.out.print("Ram Memory: ");
                     }
                 }
 
