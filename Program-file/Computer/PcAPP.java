@@ -27,29 +27,43 @@ public class PcAPP {
                 o1.setgpu(sc.nextLine());
 
                 System.out.print("Ram Memory: ");
-                if (sc.hasNextInt()) {
-                    o1.setrammemory(sc.nextInt());
-                    sc.nextLine(); 
-                } else {
-                    System.out.println("Invalid input! Please enter an number for Ram Memory.");
-                    sc.nextLine(); // consume the invalid input
-                    o1.setrammemory(0); 
+                while (true) {
+                    if (sc.hasNextInt()) {
+                        o1.setrammemory(sc.nextInt());
+                        sc.nextLine();
+                        break;
+                    } else {
+                        System.out.println("Invalid Number! Please enter a number for the Ram Memory");
+                        sc.nextLine();
+                        System.out.print("Ram Memory: ");
+                    }
                 }
-                
-                
 
+                
+                
+            
                 System.out.print("Memory Type: ");
                 o1.settypememory(sc.nextLine());
 
-                System.out.print("Quantity of Storage: ");
-                o1.setstorage(sc.nextInt());
-                
-                System.out.print("How much W has your power suply: ");
-                o2.setpsu(sc.nextLine());
+            System.out.print("Quantity of Storage: ");
+            while (true) {
+                if (sc.hasNextInt()) {
+                    o1.setstorage(sc.nextInt());
+                    sc.nextLine();
+                    break;
+                } else {
+                    System.out.println("Invalid Number! Please enter a number for the Storage");
+                    sc.nextLine();
+                    System.out.print("Quantity of Storage: ");
+                }
+            }
+            
+            System.out.print("How much W has your power suply: ");
+            o2.setpsu(sc.nextLine());
 
 
                 //PC2 INFORMATIONS
-                System.out.println("Write the Informations of the PC1:");
+                System.out.println("Write the Informations of the PC2:");
                 System.out.print("Model: ");
                 o2.setmodel(sc.nextLine());
                 
@@ -63,16 +77,37 @@ public class PcAPP {
                 o2.setgpu(sc.nextLine());
 
                 System.out.print("Ram Memory: ");
-                o2.setrammemory(sc.nextInt());
+               while(true) {
+               if (sc.hasNextInt()){
+                    o2.setrammemory(sc.nextInt());
+                    sc.nextLine();
+                    break;
+                }else{
+                    System.out.println("Invalid Number! Please enter an number for the Storage");
+                    sc.nextLine();
+                    System.out.println("Ram Memory");
+                    
+                }}
 
                 System.out.print("Memory Type: ");
                 o2.settypememory(sc.nextLine());
 
                 System.out.print("Quantity of Storage: ");
-                o2.setstorage(sc.nextInt());
 
-                System.out.print("How much W has your power suply: ");
-                o2.setpsu(sc.nextLine());
+                while(true)
+                if (sc.hasNextInt()){
+                    o2.setstorage(sc.nextInt());
+                    sc.nextLine();
+                    break;
+                }else{
+                    System.out.println("Invalid Number! Please enter an number for the Storage");
+                    sc.nextLine();
+                    o2.setstorage(0);
+                    
+                }
+
+                    System.out.print("How much W has your power suply: ");
+                    o2.setpsu(sc.nextLine());
 
 
                 //PC3 INFORMATIONS
@@ -90,13 +125,33 @@ public class PcAPP {
                 o3.setgpu(sc.nextLine());
 
                 System.out.print("Ram Memory: ");
-                o3.setrammemory(sc.nextInt());
+                while (true){
+                if (sc.hasNextInt()){
+                    o3.setrammemory(sc.nextInt());
+                    sc.nextLine();
+                    break;
+                }else{
+                    System.out.println("Invalid Number! Please enter an number for the Storage");
+                    sc.nextLine();
+                    o3.setrammemory(0);
+                    
+                }
+            }
 
-                System.out.print("Memory Type: ");
-                o3.settypememory(sc.nextLine());
+                    System.out.print("Memory Type: ");
+                    o3.settypememory(sc.nextLine());
 
                 System.out.print("Quantity of Storage: ");
-                o3.setstorage(sc.nextInt());
+                while(true){if (sc.hasNextInt()){
+                    o3.setstorage(sc.nextInt());
+                    sc.nextLine();  
+                    break;
+                }else{
+                    System.out.println("Invalid Number! Please enter an number for the Storage");
+                    sc.nextLine();
+                    o3.setstorage(0);}
+                }
+                    
 
                 System.out.print("How much W has your power suply: ");
                 o3.setpsu(sc.nextLine());
@@ -119,18 +174,38 @@ public class PcAPP {
                 String gpu4 = sc.nextLine();
 
                 System.out.print("Ram memory: ");
-                int rammemory4 = sc.nextInt();
+                int rammemory4 = 0;
+                while(true){if (sc.hasNextInt()){
+                    sc.nextInt();
+                    break;
+                }else{
+                    System.out.println("Invalid Number! Please enter an number for the Ram memory");
+                    sc.nextLine();
+                    rammemory4 = 0;
+                }}
+                    
                 
                 System.out.print("Memory Type: ");
                 String typememory4 = sc.nextLine();
 
                 System.out.print("Quantity of Storage: ");
-                int storage4 = sc.nextInt();
+                int storage4 = 0;
+                while(true){
+                    if(sc.hasNextInt()){
+                        sc.nextLine();
+                        break;
+                    }else{
+                        System.out.println("Invalid Number! Please enter an number for the storege");
+                        sc.nextLine();
+                        storage4 = 0;
+                    }
+                }
 
                 System.out.print("How much W Has your power suply: ");
                 String psu4 = sc.nextLine();
-
+                
                 Pcmodel o4 = new Pcmodel(model4, brand4, cpu4, gpu4, rammemory4, typememory4, storage4, psu4);
+                
 
                 // Showing the list of pc's!
 
@@ -142,4 +217,5 @@ public class PcAPP {
 
                     sc.close();
     }
-}
+    }
+
