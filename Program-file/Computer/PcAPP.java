@@ -1,37 +1,23 @@
 
 import java.util.Scanner;
-import javax.swing.JButton;
-import javax.swing.JFrame;
+
+
 
 public class PcAPP {
 
     public static void main(String[] args) {
 
-        JFrame window = new JFrame();
-        window.setVisible(true);
-        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        //define the window size
-        window.setBounds(665, 100, 600, 900);
+        
 
-        JButton button = new JButton("Click Here"); 
-        button.setBounds(0,0,200,30);
+        Scanner sc = new Scanner(System.in); 
 
-        // Ad on the window the button
-        window.add(button);
-
-        window.setLayout(null);
-
-
-        Scanner sc = new Scanner(System.in);
-
-            // Creating objects With the model
+            // Creating objects With the model 
 
             Pcmodel o1 = new Pcmodel();
             Pcmodel o2 = new Pcmodel();
-            Pcmodel o3 = new Pcmodel();
 
-                //Entering with the informations 
-                System.out.println("Write the Informations of the PC1:");
+                //Entering with the  model informations
+                System.out.println("\nWrite the Informations of the PC1:");
                 System.out.print("Model: ");
                 o1.setmodel(sc.nextLine());
                 
@@ -45,6 +31,8 @@ public class PcAPP {
                 o1.setgpu(sc.nextLine());
 
                 System.out.print("Ram Memory: ");
+
+                //Create a while loop control to when you send a string instead of a number, make if control with a break for the while until the Int became true
                 while (true) {
                     if (sc.hasNextInt()) {
                         o1.setrammemory(sc.nextInt());
@@ -64,6 +52,7 @@ public class PcAPP {
                 o1.settypememory(sc.nextLine());
 
             System.out.print("Quantity of Storage: ");
+            //Here is the same as the line 36
             while (true) {
                 if (sc.hasNextInt()) {
                     o1.setstorage(sc.nextInt());
@@ -81,7 +70,7 @@ public class PcAPP {
 
 
                 //PC2 INFORMATIONS
-                System.out.println("Write the Informations of the PC2:");
+                System.out.println("\nWrite the Informations of the PC2:");
                 System.out.print("Model: ");
                 o2.setmodel(sc.nextLine());
                 
@@ -127,53 +116,57 @@ public class PcAPP {
                     System.out.print("How much W has your power suply: ");
                     o2.setpsu(sc.nextLine());
 
+                //Creating objects with a parameter build, that recive the code and show it after being constructed 
 
-                //PC3 INFORMATIONS
-                System.out.println("Write the Informations of the PC3:");
+                System.out.println("\nWrite the information of Computer 3: ");
                 System.out.print("Model: ");
-                o3.setmodel(sc.nextLine());
-                
-                System.err.print("Brand: ");
-                o3.setbrand(sc.nextLine());
+                String model3 = sc.nextLine();
+
+                System.out.print("Brand: ");
+                String brand3 = sc.nextLine();
                 
                 System.out.print("Processor: ");
-                o3.setcpu(sc.nextLine());
+                String cpu3 = sc.nextLine();
 
                 System.out.print("Graphics Card: ");
-                o3.setgpu(sc.nextLine());
+                String gpu3 = sc.nextLine();
 
-                System.out.print("Ram Memory: ");
-                while (true){
-                if (sc.hasNextInt()){
-                    o3.setrammemory(sc.nextInt());
+                System.out.print("Ram memory: ");
+                int rammemory3 = 0;
+                while(true){if (sc.hasNextInt()){
+                    sc.nextInt();
                     sc.nextLine();
                     break;
                 }else{
-                    System.out.println("Invalid Number! Please enter an number for the Storage");
+                    System.out.println("Invalid Number! Please enter an number for the Ram memory");
                     sc.nextLine();
-                    o3.setrammemory(0);
+                        System.out.print("Ram Memory: ");
                     
-                }
-            }
-
-                    System.out.print("Memory Type: ");
-                    o3.settypememory(sc.nextLine());
+                }}
+                    
+                
+                System.out.print("Memory Type: ");
+                String typememory3 = sc.nextLine();
 
                 System.out.print("Quantity of Storage: ");
-                while(true){if (sc.hasNextInt()){
-                    o3.setstorage(sc.nextInt());
-                    sc.nextLine();  
-                    break;
-                }else{
-                    System.out.println("Invalid Number! Please enter an number for the Storage");
-                    sc.nextLine();
-                    o3.setstorage(0);}
+                int storage3 = 0;
+                while(true){
+                    if(sc.hasNextInt()){
+                        sc.nextInt();
+                        sc.nextLine();
+                        break;
+                    }else{
+                        System.out.println("Invalid Number! Please enter an number for the storege");
+                        sc.nextLine();
+                        System.out.print("Ram Memory: ");
+                    }
                 }
-                    
 
-                System.out.print("How much W has your power suply: ");
-                o3.setpsu(sc.nextLine());
-
+                System.out.print("How much W Has your power suply: ");
+                String psu3 = sc.nextLine();
+                
+                 // Atribuation with a parameter build
+                Pcmodel o3 = new Pcmodel(model3, brand3, cpu3, gpu3, rammemory3, typememory3, storage3, psu3);
 
                 //Creating objects with a parameter build
 
@@ -213,6 +206,7 @@ public class PcAPP {
                 while(true){
                     if(sc.hasNextInt()){
                         sc.nextInt();
+                        sc.nextLine();
                         break;
                     }else{
                         System.out.println("Invalid Number! Please enter an number for the storege");
@@ -223,16 +217,23 @@ public class PcAPP {
 
                 System.out.print("How much W Has your power suply: ");
                 String psu4 = sc.nextLine();
+
+
+                // Atribuation with a parameter build
                 
                 Pcmodel o4 = new Pcmodel(model4, brand4, cpu4, gpu4, rammemory4, typememory4, storage4, psu4);
                 
 
                 // Showing the list of pc's!
 
-                System.out.println("\nPC'S LIST!");
+                System.out.println("\n-------PC'S LIST!--------");
+                System.out.println("\n=====Here's the first PC!=====");
                 o1.print1();
+                System.out.println("\n=====Here's the Second PC!=====");
                 o2.print1();
+                System.out.println("\n=====Here's the third PC!=====");
                 o3.print1();
+                System.out.println("\n=====Here's the forth PC!=====");
                 o4.print1();
 
                     sc.close();
