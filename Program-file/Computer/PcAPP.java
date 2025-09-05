@@ -1,9 +1,27 @@
 
 import java.util.Scanner;
+import javax.swing.JButton;
+import javax.swing.JFrame;
 
 public class PcAPP {
 
     public static void main(String[] args) {
+
+        JFrame window = new JFrame();
+        window.setVisible(true);
+        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //define the window size
+        window.setBounds(665, 100, 600, 900);
+
+        JButton button = new JButton("Click Here"); 
+        button.setBounds(0,0,200,30);
+
+        // Ad on the window the button
+        window.add(button);
+
+        window.setLayout(null);
+
+
         Scanner sc = new Scanner(System.in);
 
             // Creating objects With the model
